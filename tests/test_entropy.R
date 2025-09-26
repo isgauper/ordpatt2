@@ -2,15 +2,12 @@
 #'
 #' Calls entropy_test.R file and runs tests
 
-# @export
+#' @export
+test_entropy <- function(){
 
-#
-#
-# test_entropy <- function(){
-#
-#     testthat::test_file(file.path("R", "entropy_test.R"))
-#
-# }
+    testthat::test_file(file.path("tests", "testthat", "test_entropy.R"))
+
+}
 
 
-test_check("ordpatt2")
+test_entropy
