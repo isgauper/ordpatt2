@@ -7,23 +7,15 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
 
-```{r setup}
+```{r setup, echo=FALSE, warning=FALSE}
 library(ordpatt2)
 ```
 
-This function computes several types of entropy of ordinal patterns as well as the Fisher information.
+This function computes several types of entropy of ordinal patterns as well as the Fisher information. It combines the **HFisher**, **HRenyi**, **HShannon**, and **HTsallis** functions from the *StatOrdPattHxC* package and rewrites it using Object Oriented Programming. The examples below are taken from *StatOrdPattHxC*.
 
-Here are some examples:
 
----------note: examples taken from StatOrdPattHxc---------------
-```{r, echo=TRUE}
+```{r, echo=TRUE, eval=TRUE}
 # Time series
 set.seed(1234567890, kind="Mersenne-Twister")
 x <- rnorm(1000) # white noise
@@ -34,26 +26,19 @@ op.wn.4 <- OPprob2(x, emb=4)
 op.ma.4 <- OPprob2(y, emb=4)
 
 # Fisher information measures
-print("Fisher")
 entropy(op.wn.4, "Fisher")
 entropy(op.ma.4, "Fisher")
 
 # Renyi
-print("")
-print("Renyi")
 entropy(op.wn.4, "Renyi")
 entropy(op.ma.4, "Renyi")
 
 
 # Shannon
-print("")
-print("Shannon")
 entropy(op.wn.4, "Shannon")
 entropy(op.ma.4, "Shannon")
 
 # Tsallis
-print("")
-print("Tsallis")
 entropy(op.wn.4, "Tsallis")
 entropy(op.ma.4, "Tsallis")
 ```

@@ -7,13 +7,39 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+
+**OPprob2** is a function that finds the Ordinal Patterns probabilities in a time series for a 
+given embedding dimension. It is based on the **OPprob** function from the *StatOrdPattHxC* package.
+It has been rewritten using Object Oriented Programming and plotting capability has been added.
+
+```{r setup, warning=FALSE, echo=FALSE}
+library(ordpatt2)
+library(ggplot2)
+library(ggthemes)
 ```
 
-```{r setup}
-library(ordpatt2)
+
+```{r, echo=TRUE, eval=TRUE}
+set.seed(1234567890, kind="Mersenne-Twister")
+x <- rnorm(1000) # white noise
+y <- mov.av(x, order=11) # smoothed with moving averages
+opx <- OPprob2(x, emb=4)
+opy <- OPprob2(y, emb=4)
+
 ```
+
+
+```{r, echo=TRUE, eval=TRUE}
+opx
+opy
+```
+
+
+```{r, echo=TRUE, eval=TRUE}
+plot(opx)
+plot(opy)
+```
+
+
+
+

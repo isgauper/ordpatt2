@@ -8,5 +8,7 @@
 ~%2Fordpatt2_pkg%2Fordpatt2%2FR%2Fzzz_perm2.R="30AAE21C"
 ~%2Fordpatt2_pkg%2Fordpatt2%2Fsrc%2FRcppExports.cpp="799096D5"
 ~%2Fordpatt2_pkg%2Fordpatt2%2Fsrc%2Fperm2.cpp="E022AFF3"
+~%2Fordpatt2_pkg%2Fordpatt2%2Ftests%2Fentropy_test.R="EA3B1329"
+~%2Fordpatt2_pkg%2Fordpatt2%2Ftests%2Ftest_entropy.R="D6F8788D"
 ~%2Fordpatt2_pkg%2Fordpatt2%2Fvignettes%2FOPprob2.Rmd="985E150D"
 ~%2Fordpatt2_pkg%2Fordpatt2%2Fvignettes%2Fentropy.Rmd="DA2DF212"
