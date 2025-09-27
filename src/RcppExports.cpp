@@ -11,20 +11,31 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // perm2
-List perm2(IntegerVector input, int emb);
-RcppExport SEXP _ordpatt2_perm2(SEXP inputSEXP, SEXP embSEXP) {
+List perm2(IntegerVector input);
+RcppExport SEXP _ordpatt2_perm2(SEXP inputSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< IntegerVector >::type input(inputSEXP);
-    Rcpp::traits::input_parameter< int >::type emb(embSEXP);
-    rcpp_result_gen = Rcpp::wrap(perm2(input, emb));
+    rcpp_result_gen = Rcpp::wrap(perm2(input));
+    return rcpp_result_gen;
+END_RCPP
+}
+// pi_i2
+List pi_i2(NumericVector pat);
+RcppExport SEXP _ordpatt2_pi_i2(SEXP patSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type pat(patSEXP);
+    rcpp_result_gen = Rcpp::wrap(pi_i2(pat));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_ordpatt2_perm2", (DL_FUNC) &_ordpatt2_perm2, 2},
+    {"_ordpatt2_perm2", (DL_FUNC) &_ordpatt2_perm2, 1},
+    {"_ordpatt2_pi_i2", (DL_FUNC) &_ordpatt2_pi_i2, 1},
     {NULL, NULL, 0}
 };
 
