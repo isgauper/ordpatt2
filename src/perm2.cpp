@@ -15,7 +15,7 @@ void display(vector<int> a, int n){
 
 
 // [[Rcpp::export]]
-List perm2(IntegerVector input, int emb=4) {
+List perm2(IntegerVector input) {
   //Converting R vector to C++ vector
   vector<int> a(input.begin(), input.end());
   int n = a.size();
@@ -32,4 +32,12 @@ List perm2(IntegerVector input, int emb=4) {
   return result;
 }
 
+// Trying to get this to match pi_i code
+// [[Rcpp::export]]
+List pi_i2(NumericVector pat){
+  int a = pat.size() - 1;
+  IntegerVector int_pat = as<IntegerVector>(pat);
+  List p = perm2(int_pat);
+  return p;
+}
 

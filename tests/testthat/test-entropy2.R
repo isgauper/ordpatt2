@@ -1,22 +1,42 @@
 #' Unit tests for Entropy function
 
 
-test_that("entropy function works with different embedding dimensions", {
-  # Generate test data
+test_that("Test whether outputs are the same as StatOrdPattHxC", {
+  # Get test data
   set.seed(123)  # for reproducibility
   x <- rnorm(1000)
 
-  # Generate ordinal pattern probabilities with embedding dimension 5
-  op.wn.y <- StatOrdPattHxC::OPprob(x, emb = 5)
+  # Get ordinal pattern probabilities
+  op.wn.4 <- StatOrdPattHxC::OPprob(x, emb = 4)
+  op.wn.5 <- StatOrdPattHxC::OPprob(x, emb = 5)
 
-  # Test with embedding dimension 5
+
   expect_equal(
-    entropy(op.wn.y, method = "Shannon")[1],
-    StatOrdPattHxC::HShannon(op.wn.y)
+    entropy(op.wn.4, method = "Shannon")[1],
+    StatOrdPattHxC::HShannon(op.wn.4)
   )
 
   expect_equal(
-    entropy(op.wn.y, method = "Fisher")[1],
-    StatOrdPattHxC::HFisher(op.wn.y)
+    entropy(op.wn.4, method = "Fisher")[1],
+    StatOrdPattHxC::HFisher(op.wn.4)
   )
+
+  expect_equal(
+    entropy(op.wn.5, method = "Renyi")[1],
+    StatOrdPattHxC::HRenyi(op.wn.4)
+  )
+
+  expect_equal(
+    entropy(op.wn.5, method = "Tsallis")[1],
+    StatOrdPattHxC::HTsallis(op.wn.4)
+  )
+
+
+})
+
+
+test_that("Test  whether output type is double", {
+
+expect_type(entropy(op.wn.4,"F")[1], "double")
+
 })
