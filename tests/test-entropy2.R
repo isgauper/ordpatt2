@@ -23,12 +23,12 @@ test_that("Test whether outputs are the same as StatOrdPattHxC", {
 
   expect_equal(
     entropy(op.wn.5, method = "Renyi")[1],
-    StatOrdPattHxC::HRenyi(op.wn.4)
+    StatOrdPattHxC::HRenyi(op.wn.5)
   )
 
   expect_equal(
     entropy(op.wn.5, method = "Tsallis")[1],
-    StatOrdPattHxC::HTsallis(op.wn.4)
+    StatOrdPattHxC::HTsallis(op.wn.5)
   )
 
 
