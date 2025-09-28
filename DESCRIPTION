@@ -1,17 +1,20 @@
 Package: ordpatt2
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Functions for working with Ordinal Pattenrs
 Version: 0.1.0
 Authors@R: c(
     person(
       "Emmy", "Gauper",
-      email = "isgauper@gmail.com.com",
+      email = "isgauper@gmail.com",
       role = c("aut", "cre")
-    )
-  )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+    ),      person(given="Alejandro C.", middle="", family="Frery", "alejandro.frery@vuw.ac.nz", role = c("aut"),
+           comment = c(ORCID = "0000-0002-8002-5341")),
+      person(given="Juliana", middle="", family="Gambini", "juliana.gambini@unahur.edu.ar", role = c("aut"),
+           comment = c(ORCID = "0000-0002-4534-1402")),
+      person(given="Magdalena", middle="", family="Lucini", "lucini@exa.unne.edu.ar", role = c("aut"),
+           comment = c(ORCID = "0000-0001-6615-7711")))
+Description: Calculates probabilities from Ordinal Patterns as well as entropies and other measures.
+License: : MIT + file LICENSE
 Imports: Rcpp (>= 1.0.9),
   dplyr,
   ggplot2,
