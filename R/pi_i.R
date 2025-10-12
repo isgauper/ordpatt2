@@ -5,6 +5,6 @@
 
 pi_i <- function(pat){
   a <- length(pat) - 1
-  op <- as.data.frame(perm(0:a))
+  op <- as.data.frame(perm2(0:a))
   return(row.match(pat, op))
 }

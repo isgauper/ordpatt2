@@ -24,7 +24,7 @@ OPseq <- function(TS, emb, lag=1){
   # OP sequence for lag = 1
   seqOP <- vector()
   for (i in 1:el){
-    seqOP[i] <- pi_i2(ind_pos(TS[i:(i + emb - 1)]))
+    seqOP[i] <- pi_i(ind_pos(TS[i:(i + emb - 1)]))
   }
 
   # OP sequence for the given lag
