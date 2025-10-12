@@ -2,10 +2,10 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 perm2 <- function(input) {
-    .Call('_ordpatt2_perm2', PACKAGE = 'ordpatt2', input)
+    .Call(`_ordpatt2_perm2`, input)
 }
 
 pi_i2 <- function(pat) {
-    .Call('_ordpatt2_pi_i2', PACKAGE = 'ordpatt2', pat)
+    .Call(`_ordpatt2_pi_i2`, pat)
 }
 
