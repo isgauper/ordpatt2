@@ -9,3 +9,7 @@ pi_i2 <- function(pat) {
     .Call(`_ordpatt2_pi_i2`, pat)
 }
 
+pi_i <- function(pat) {
+    .Call(`_ordpatt2_pi_i`, pat)
+}
+

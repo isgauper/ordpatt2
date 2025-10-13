@@ -35,7 +35,7 @@ OPprob2 <- function(TS, emb, ...){
 #' @export
 OPprob2.default <- function(TS, emb, ...){
   op <- tibble::tibble(
-    OP = factor(OPseq(TS, emb), levels = 1:factorial(emb))
+    OP = factor(OPseq2(TS, emb), levels = 1:factorial(emb))
   )
 
   fr <- op %>% count(OP, .drop = FALSE)
