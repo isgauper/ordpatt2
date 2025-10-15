@@ -21,21 +21,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// pi_i2_v2
-int pi_i2_v2(IntegerVector pat);
-RcppExport SEXP _ordpatt2_pi_i2_v2(SEXP patSEXP) {
+// pi_i2
+int pi_i2(IntegerVector pat);
+RcppExport SEXP _ordpatt2_pi_i2(SEXP patSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< IntegerVector >::type pat(patSEXP);
-    rcpp_result_gen = Rcpp::wrap(pi_i2_v2(pat));
+    rcpp_result_gen = Rcpp::wrap(pi_i2(pat));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ordpatt2_perm2", (DL_FUNC) &_ordpatt2_perm2, 1},
-    {"_ordpatt2_pi_i2_v2", (DL_FUNC) &_ordpatt2_pi_i2_v2, 1},
+    {"_ordpatt2_pi_i2", (DL_FUNC) &_ordpatt2_pi_i2, 1},
     {NULL, NULL, 0}
 };
 

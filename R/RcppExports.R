@@ -5,7 +5,7 @@ perm2 <- function(v) {
     .Call(`_ordpatt2_perm2`, v)
 }
 
-pi_i2_v2 <- function(pat) {
-    .Call(`_ordpatt2_pi_i2_v2`, pat)
+pi_i2 <- function(pat) {
+    .Call(`_ordpatt2_pi_i2`, pat)
 }
 

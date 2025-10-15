@@ -3,8 +3,8 @@
 
 test_that("Test whether outputs are the same as StatOrdPattHxC", {
   # Get test data
-  set.seed(123)  # for reproducibility
-  x <- rnorm(1000)
+  # set.seed(123)  # for reproducibility
+  # x <- rnorm(1000)
 
 
   expect_equal(
