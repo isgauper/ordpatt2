@@ -11,7 +11,7 @@
 #'
 
 
-#-----------Note: unchanged from StatOrdPattHxC---------------------#
+# Note: unchanged from StatOrdPattHxC
 
 ind_pos <- function(part){
   v <- sort(unique(part))

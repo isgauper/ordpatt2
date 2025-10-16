@@ -59,7 +59,12 @@ int pi_i2(IntegerVector pat) {
   }
 
 
+  // Return NA if no match found
+  return NA_INTEGER;
 }
+
+
+
 
 
 

@@ -25,4 +25,5 @@ set.seed(1234567890, kind="Mersenne-Twister")
 x <- rnorm(1000)
 x.ma <- mov.av(x, order=11)
 
+
 }

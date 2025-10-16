@@ -22,13 +22,14 @@ Imports: Rcpp (>= 1.0.9),
   tibble,
   prodlim
 Suggests: 
-  knitr,
-  rmarkdown,
-  testthat,
-  StatOrdPattHxC,
-  ggthemes
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0),
+    StatOrdPattHxC,
+    ggthemes
 LinkingTo: Rcpp
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
 VignetteBuilder: knitr
+Config/testthat/edition: 3

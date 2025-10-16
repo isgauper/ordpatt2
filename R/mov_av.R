@@ -19,6 +19,9 @@
 #' x <- rnorm(1000)
 #' x.ma <- mov.av(x, order=11)
 #'
+#'
+
+# Note: unchanged from StatOrdPattHxC
 
 mov.av <- function(x, order=1){
   full <- unclass(stats::filter(x, rep(1 / order, order), sides = 2))

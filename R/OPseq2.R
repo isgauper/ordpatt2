@@ -18,7 +18,38 @@
 
 OPseq2 <- function(TS, emb, lag=1){
 
-   # number of OP for lag = 1
+  # TS must not contain characters
+  if (!all(sapply(TS, is.numeric))) {
+    stop("All columns in 'TS' must be numeric.")
+  }
+
+  # TS must not be a list
+  if (is.list(TS)){
+    stop("'TS' must not be a list")
+  }
+
+  # emb must be greater than 1
+  if (emb < 2 ){
+    stop("'emb' must be greater than 1")
+  }
+
+  # emb must be an integer
+  if ( emb %% 1 != 0){
+    stop("'emb' must be an integer")
+  }
+
+  # lag must be greater than 0
+  if (!(lag > 0) ){
+    stop("'lag' must be greater than 0")
+  }
+
+  # lag must be an integer
+  if ( lag %% 1 != 0){
+    stop("'lag' must be an integer")
+  }
+
+
+  # number of OP for lag = 1
   el <- length(TS) - emb + 1
 
   # OP sequence for lag = 1

@@ -34,6 +34,28 @@ OPprob2 <- function(TS, emb, ...){
 # Default method
 #' @export
 OPprob2.default <- function(TS, emb, ...){
+
+  # TS must not contain characters
+  if (!all(sapply(TS, is.numeric))) {
+    stop("All columns in 'TS' must be numeric.")
+  }
+
+  # TS must not be a list
+  if (is.list(TS)){
+    stop("'TS' must not be a list")
+  }
+
+  # emb must be greater than 1
+  if (emb < 2 ){
+    stop("'emb' must be greater than 1")
+  }
+
+  # emb must be an integer
+  if ( emb %% 1 != 0){
+    stop("'emb' must be an integer")
+  }
+
+
   op <- tibble::tibble(
     OP = factor(OPseq2(TS, emb), levels = 1:factorial(emb))
   )
