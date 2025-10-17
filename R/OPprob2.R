@@ -45,10 +45,16 @@ OPprob2.default <- function(TS, emb, ...){
     stop("'TS' must not be a list")
   }
 
-  # emb must be greater than 1
+  # emb must be greater than 1 and less than Inf
   if (emb < 2 ){
-    stop("'emb' must be greater than 1")
+    stop("'emb' must be greater than 1 and less than Inf")
   }
+
+  # emb must be greater than 1 and less than Inf
+  if (emb == Inf ){
+    stop("'emb' must be greater than 1 and less than Inf")
+  }
+
 
   # emb must be an integer
   if ( emb %% 1 != 0){

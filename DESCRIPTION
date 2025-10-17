@@ -20,13 +20,13 @@ Imports: Rcpp (>= 1.0.9),
   ggplot2,
   stats,
   tibble,
-  prodlim
+  prodlim,
+  ggthemes
 Suggests: 
     knitr,
     rmarkdown,
     testthat (>= 3.0.0),
-    StatOrdPattHxC,
-    ggthemes
+    StatOrdPattHxC
 LinkingTo: Rcpp
 Encoding: UTF-8
 LazyData: true

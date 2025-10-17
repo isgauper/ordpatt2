@@ -28,9 +28,14 @@ OPseq2 <- function(TS, emb, lag=1){
     stop("'TS' must not be a list")
   }
 
-  # emb must be greater than 1
+  # emb must be greater than 1 and less than Inf
   if (emb < 2 ){
-    stop("'emb' must be greater than 1")
+    stop("'emb' must be greater than 1 and less than Inf")
+  }
+
+  # emb must be greater than 1 and less than Inf
+  if (emb == Inf ){
+    stop("'emb' must be greater than 1 and less than Inf")
   }
 
   # emb must be an integer

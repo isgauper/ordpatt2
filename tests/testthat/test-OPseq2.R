@@ -71,3 +71,11 @@ test_that("Test for error if TS is a list", {
 
 })
 
+
+
+test_that("Test for error if emb = Inf", {
+
+  expect_error(OPseq2(x,emb=Inf), "'emb' must be greater than 1 and less than Inf")
+
+})
+
