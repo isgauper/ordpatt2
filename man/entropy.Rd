@@ -9,15 +9,20 @@ entropy(p, ...)
 \arguments{
 \item{p}{a sequence of ordinal pattern probabilities}
 
-\item{method}{string; The type of entropy or information to calculate}
+\item{method}{string; The type of entropy or information to calculate; default "Fisher"}
+
+\item{beta}{the parameter beta for the Rényi or Tsallis entropy; default 1.5}
 }
 \description{
-Calculates Fisher Information or Shannon Entropy from Ordinal Pattern probabilities
+Calculates Fisher Information or Shannon, Rényi or Tsallis Entropy from Ordinal Pattern probabilities
 }
 \examples{
 z <- rnorm(1000)
-op.wn.z <- OPprob(z, emb=4)
+op.wn.z <- OPprob2(z, emb=4)
+entropy(op.wn.z, method="Fisher")
 entropy(op.wn.z, method="Shannon")
+entropy(op.wn.z, method="Renyi", beta=2)
+entropy(op.wn.z, method="Tsallis")
 }
 \keyword{Ordinal}
 \keyword{Patterns}

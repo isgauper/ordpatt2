@@ -48,3 +48,40 @@ test_that("Test  whether missing p returns an error", {
 })
 
 
+test_that("Test  whether p of length 1 returns an error", {
+
+  expect_error(entropy(1), "ERROR: Not a valid probability function")
+
+})
+
+
+test_that("Test  whether p of length 1 returns an error", {
+
+  expect_error(entropy(1), "ERROR: Not a valid probability function")
+
+})
+
+
+test_that("Test  whether a negative value in p returns an error", {
+
+  expect_error(entropy(c(.2,.4,-.1,.5)), "ERROR: Not a valid probability function")
+
+})
+
+
+test_that("Test whether sum(p) < 1 returns an error", {
+
+  expect_error(entropy(c(.4,.5, .05)), "ERROR: Not a valid probability function")
+
+})
+
+test_that("Test whether sum(p) < 1 returns an error", {
+
+  expect_error(entropy(c(.4,.5, .15)), "ERROR: Not a valid probability function")
+
+})
+
+
+
+
+

@@ -1,17 +1,21 @@
 #' Entropy Tests of Ordinal Patterns
 #'
-#' Calculates Fisher Information or Shannon Entropy from Ordinal Pattern probabilities
+#' Calculates Fisher Information or Shannon, Rényi or Tsallis Entropy from Ordinal Pattern probabilities
 #' @param p a sequence of ordinal pattern probabilities
-#' @param method string; The type of entropy or information to calculate
+#' @param method string; The type of entropy or information to calculate; default "Fisher"
+#' @param beta the parameter beta for the Rényi or Tsallis entropy; default 1.5
 #' @keywords Ordinal Patterns
 #' @export
 #' @examples
 #' z <- rnorm(1000)
-#' op.wn.z <- OPprob(z, emb=4)
+#' op.wn.z <- OPprob2(z, emb=4)
+#' entropy(op.wn.z, method="Fisher")
 #' entropy(op.wn.z, method="Shannon")
+#' entropy(op.wn.z, method="Renyi", beta=2)
+#' entropy(op.wn.z, method="Tsallis")
 
 
-#-------Include more examples?-------#
+
 #-------Improve print results so it doesn't say entropy for Fisher Info--------
 #-------Should I rename the function so it's more accurate for Fisher too? (I don't think Fisher is a type of entropy)--------#
 
@@ -33,7 +37,7 @@ entropy.numeric <- function(p, method = c("Fisher", "Renyi", "Shannon", "Tsallis
 
       method <- match.arg(method)
 
-      if(!(length(p) >= 2 & min(p) >= 0 & sum(p) <= (1+.Machine$double.eps))) stop("ERROR: Not a valid probability function")
+      if(!(length(p) >= 2 & min(p) >= 0 & sum(p) <= (1+.Machine$double.eps) & sum(p) >= (1-Machine$double.eps))) stop("ERROR: Not a valid probability function")
 
       H <- switch(
         method,
