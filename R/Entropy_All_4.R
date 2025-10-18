@@ -37,7 +37,7 @@ entropy.numeric <- function(p, method = c("Fisher", "Renyi", "Shannon", "Tsallis
 
       method <- match.arg(method)
 
-      if(!(length(p) >= 2 & min(p) >= 0 & sum(p) <= (1+.Machine$double.eps) & sum(p) >= (1-Machine$double.eps))) stop("ERROR: Not a valid probability function")
+      if(!(length(p) >= 2 & min(p) >= 0 & sum(p) <= (1+.Machine$double.eps) & sum(p) >= (1-.Machine$double.eps))) stop("ERROR: Not a valid probability function")
 
       H <- switch(
         method,
