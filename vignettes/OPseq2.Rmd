@@ -27,7 +27,7 @@ The embedding dimension m. This is the number of consecutive points that form ea
 
 #### 3. lag (Optional)
 
-The time lag between two time series observations. It must be an integer greater than 0.
+The time lag between two time series observations. It must be an integer greater than 0. The default value is 1.
 
 #### Returns
 
