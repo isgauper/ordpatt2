@@ -3,7 +3,7 @@
 #' @usage OPprob2(TS, emb)
 #' @param TS time series of length \eqn{n-m+1}
 #' @param emb embedding dimension \eqn{m}
-#' @returns A probability function \eqn{\boldsymbol{p} = (p_1, p_2, \ldots, p_{m!})}
+#' @returns A probability vector \eqn{p = (p_1, p_2, ..., p_{m!})}
 #'
 #' @name OPprob2
 #'

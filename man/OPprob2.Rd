@@ -12,7 +12,7 @@ OPprob2(TS, emb)
 \item{emb}{embedding dimension \eqn{m}}
 }
 \value{
-A probability function \eqn{\boldsymbol{p} = (p_1, p_2, \ldots, p_{m!})}
+A probability vector \eqn{p = (p_1, p_2, ..., p_{m!})}
 }
 \description{
 Function that finds the Ordinal Patterns probabilities in a time series for a given embedding dimension
