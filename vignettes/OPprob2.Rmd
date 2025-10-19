@@ -10,7 +10,25 @@ vignette: >
 
 **OPprob2** is a function that finds the Ordinal Patterns probabilities in a time series for a 
 given embedding dimension. It is based on the **OPprob** function from the *StatOrdPattHxC* package.
-It has been rewritten using Object Oriented Programming and plotting capability has been added.
+It has been rewritten using Object Oriented Programming and a plotting capability has been added.
+
+
+### Arguments 
+
+#### 1. TS (Required)
+
+A time series of length $n − m + 1$.
+
+#### 2. emb (Required)
+
+The embedding dimension m. This is the number of consecutive points that form each ordinal pattern.
+
+#### Returns
+
+A probability function $\mathbf{p} = (p_1, p_2, ..., p_{m!})$ 
+
+### Examples
+
 
 ```{r setup, warning=FALSE, echo=FALSE}
 library(ordpatt2)

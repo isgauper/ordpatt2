@@ -3,7 +3,7 @@
 #' @usage OPprob2(TS, emb)
 #' @param TS time series of length \eqn{n-m+1}
 #' @param emb embedding dimension \eqn{m}
-#' @returns a sequence of \eqn{n} patterns
+#' @returns A probability function \eqn{\boldsymbol{p} = (p_1, p_2, \ldots, p_{m!})}
 #'
 #' @name OPprob2
 #'
@@ -19,12 +19,14 @@
 #' set.seed(1234567890, kind="Mersenne-Twister")
 #' x <- rnorm(1000) # white noise
 #' y <- mov.av(x, order=11) # smoothed with moving averages
-#' OPprob2(x, emb=4)
-#' OPprob2(y, emb=4)
-
+#' opx <- OPprob2(x, emb=4)
+#' opy <- OPprob2(y, emb=4)
+#' opx
+#' opy
+#' plot(opx)
+#' plot(opy)
 
 utils::globalVariables("OP")
-
 
 
 OPprob2 <- function(TS, emb, ...){
