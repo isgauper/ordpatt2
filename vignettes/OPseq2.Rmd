@@ -1,0 +1,54 @@
+---
+title: "OPseq2"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{OPseq2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+**OPseq2** is a function that finds the ordinal pattern sequence of a time series, 
+given the embedding dimension and lag. It is based on the 
+**OPseq** function from the *StatOrdPattHxC* package. It depends on two internal 
+subfunctions, **pi_i2** and **perm2**. The original functions **pi_i** and **perm**
+from *StatOrdPattHxC* were causing the function to run slowly and have been rewritten
+in C++. The examples below have been borrowed from *StatOrdPattHxC*.
+
+
+### Arguments 
+
+#### 1. TS (Required)
+
+A time series of length $n − m + 1$.
+
+#### 2. emb (Required)
+
+The embedding dimension m. This is the number of consecutive points that form each ordinal pattern. It must be an integer greater than 1.
+
+#### 3. lag (Optional)
+
+The time lag between two time series observations. It must be an integer greater than 0.
+
+#### Returns
+
+A series of integers indicating the ordinal pattern sequence for that section of the time series.
+
+### Examples
+
+
+
+```{r setup, warning=FALSE, echo=FALSE}
+library(ordpatt2)
+```
+
+
+
+```{r, echo=TRUE, eval=TRUE}
+# Generate a time series and compute its ordinal patterns
+set.seed(1234567890, kind="Mersenne-Twister")
+x <- rnorm(1000) # white noise
+y <- rnorm(100)
+OPseq2(x, emb=4, lag=1)[1:20]
+OPseq2(y, emb=3, lag=1)
+
+```
