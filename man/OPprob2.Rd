@@ -12,7 +12,7 @@ OPprob2(TS, emb)
 \item{emb}{embedding dimension \eqn{m}}
 }
 \value{
-a sequence of \eqn{n} patterns
+A probability function \eqn{\boldsymbol{p} = (p_1, p_2, \ldots, p_{m!})}
 }
 \description{
 Function that finds the Ordinal Patterns probabilities in a time series for a given embedding dimension
@@ -21,6 +21,10 @@ Function that finds the Ordinal Patterns probabilities in a time series for a gi
 set.seed(1234567890, kind="Mersenne-Twister")
 x <- rnorm(1000) # white noise
 y <- mov.av(x, order=11) # smoothed with moving averages
-OPprob2(x, emb=4)
-OPprob2(y, emb=4)
+opx <- OPprob2(x, emb=4)
+opy <- OPprob2(y, emb=4)
+opx
+opy
+plot(opx)
+plot(opy)
 }
